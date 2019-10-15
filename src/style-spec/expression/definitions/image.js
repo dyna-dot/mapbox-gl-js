@@ -6,6 +6,7 @@ import type {Expression} from '../expression';
 import type EvaluationContext from '../evaluation_context';
 import type ParsingContext from '../parsing_context';
 import type {Type} from '../types';
+import ResolvedImage from '../types/resolved_image';
 
 export default class ImageExpression implements Expression {
     type: Type;
@@ -35,7 +36,7 @@ export default class ImageExpression implements Expression {
             available = true;
         }
 
-        return {name: evaluatedImageName, available};
+        return ResolvedImage.fromString({name: evaluatedImageName, available});
     }
 
     eachChild(fn: (Expression) => void) {
