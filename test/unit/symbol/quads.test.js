@@ -8,6 +8,8 @@ test('getIconQuads', (t) => {
         paddedRect: Object.freeze({x: 0, y: 0, w: 17, h: 13})
     });
 
+    // TODO: add unit test for quads with sdf flag
+
     t.test('point', (t) => {
         t.deepEqual(getIconQuads({
             top: -5.5,
@@ -23,6 +25,7 @@ test('getIconQuads', (t) => {
             tex: {x: 0, y: 0, w: 17, h: 13},
             writingMode: null,
             glyphOffset: [0, 0],
+            isSDF: null,
             sectionIndex: 0
         }], 'icon-anchor: center');
 
@@ -40,6 +43,7 @@ test('getIconQuads', (t) => {
             tex: {x: 0, y: 0, w: 17, h: 13},
             writingMode: null,
             glyphOffset: [0, 0],
+            isSDF: null,
             sectionIndex: 0
         }], 'icon-anchor: center icon, icon-scale: 2');
 
@@ -57,6 +61,7 @@ test('getIconQuads', (t) => {
             tex: {x: 0, y: 0, w: 17, h: 13},
             writingMode: null,
             glyphOffset: [0, 0],
+            isSDF: null,
             sectionIndex: 0
         }], 'icon-anchor: top-right');
 
@@ -74,6 +79,7 @@ test('getIconQuads', (t) => {
             tex: {x: 0, y: 0, w: 17, h: 13},
             writingMode: null,
             glyphOffset: [0, 0],
+            isSDF: null,
             sectionIndex: 0
         }], 'icon-text-fit: both');
 
@@ -95,6 +101,7 @@ test('getIconQuads', (t) => {
             tex: {x: 0, y: 0, w: 17, h: 13},
             writingMode: null,
             glyphOffset: [0, 0],
+            isSDF: null,
             sectionIndex: 0
         }]);
         t.end();
