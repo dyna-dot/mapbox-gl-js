@@ -9,7 +9,6 @@ import type {PositionedIcon, Shaping} from './shaping';
 import {SHAPING_DEFAULT_OFFSET} from './shaping';
 import type SymbolStyleLayer from '../style/style_layer/symbol_style_layer';
 import type {Feature} from '../style-spec/expression';
-import type {GlyphPosition} from '../render/glyph_atlas';
 import type {StyleImage} from '../style/style_image';
 import ONE_EM from './one_em';
 
@@ -115,7 +114,7 @@ export function getGlyphQuads(anchor: Anchor,
         const positionedGlyph = positionedGlyphs[i];
 
         // The rects have an additional buffer that is not included in their size.
-        let glyphPadding = 1.0;
+        const glyphPadding = 1.0;
         let rectBuffer = GLYPH_PBF_BORDER + glyphPadding;
         let isSDF = true;
 

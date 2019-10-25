@@ -86,7 +86,7 @@ export default class FormatExpression implements Expression {
     evaluate(ctx: EvaluationContext) {
         const evaluateSection = section => {
             const evaluatedContent = section.content.evaluate(ctx);
-            if (typeOf(evaluatedContent) == ImageType) {
+            if (typeOf(evaluatedContent) === ImageType) {
                 return new FormattedSection('', evaluatedContent, null, null, null);
             }
 
@@ -96,7 +96,7 @@ export default class FormatExpression implements Expression {
                     section.scale ? section.scale.evaluate(ctx) : null,
                     section.font ? section.font.evaluate(ctx).join(',') : null,
                     section.textColor ? section.textColor.evaluate(ctx) : null
-                );
+            );
         };
 
         return new Formatted(this.sections.map(evaluateSection));

@@ -70,7 +70,7 @@ class SectionOptions {
     scale: number;
     fontStack: string;
     // Image options
-    imageName: string | null;
+    imageName: string | null;
 
     constructor() {
         this.scale = 1.0;
@@ -91,7 +91,7 @@ class SectionOptions {
         return imageOptions;
     }
 
-};
+}
 
 class TaggedString {
     text: string;
@@ -190,7 +190,7 @@ class TaggedString {
 
         const nextImageSectionCharCode = this.getNextImageSectionCharCode();
         if (!nextImageSectionCharCode) {
-            warnOnce(`Reached maximum number of images ${PUAend-PUAbegin + 2}`);
+            warnOnce(`Reached maximum number of images ${PUAend - PUAbegin + 2}`);
             return;
         }
 
@@ -336,7 +336,7 @@ function getGlyphAdvance(codePoint: number,
                          section: SectionOptions,
                          glyphPositions: {[string]: {[number]: GlyphPosition}},
                          imagePositions: {[string]: ImagePosition},
-                         spacing: number) : number | null {
+                         spacing: number): number | null {
     if (!section.imageName) {
         const positions = glyphPositions[section.fontStack];
         const glyph = positions && positions[codePoint];
@@ -603,10 +603,10 @@ function shapeLines(shaping: Shaping,
 
                 // Create glyph metrics for an image section.
                 metrics = {width: size[0],
-                           height: size[1],
-                           left: GLYPH_DEFAULT_LEFT_PADDING,
-                           top: -IMAGE_PADDING,
-                           advance: size[0] + GLYPH_DEFAULT_RIGHT_PADDING};
+                    height: size[1],
+                    left: GLYPH_DEFAULT_LEFT_PADDING,
+                    top: -IMAGE_PADDING,
+                    advance: size[0] + GLYPH_DEFAULT_RIGHT_PADDING};
 
                 // Difference between one EM and animage size.
                 // Aligns bottom of an image to a baseline level.
@@ -690,7 +690,7 @@ function align(positionedGlyphs: Array<PositionedGlyph>,
     const shiftX = (justify - horizontalAlign) * maxLineLength;
     let shiftY = 0;
 
-    if (maxLineHeight != lineHeight) {
+    if (maxLineHeight !== lineHeight) {
         shiftY = -blockHeight * verticalAlign - SHAPING_DEFAULT_OFFSET;
     } else {
         shiftY = (-verticalAlign * lineCount + 0.5) * lineHeight;
